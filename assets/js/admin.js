@@ -61,6 +61,7 @@ function delete_alert_nirweb(form) {
     }
   }
   jQuery(document).ready(function () {
+      
       //----------------- Select All CheckBox
       jQuery('body').on('click', '#selectAll', function (e) {
           jQuery(this).closest('table').find('tbody th input:checkbox').prop('checked', this.checked);
