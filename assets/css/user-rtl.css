@@ -365,16 +365,16 @@ background-color:#9f3fe5;
     font-size: 13px;
     color: #b3b3b3;
 }
-.ariborder_wpyaru-red {
+.arbitrator_wpyaru-red {
     border-right: solid 3pt #ff0000 !important;
 }
-.ariborder_wpyaru-blue {
+.arbitrator_wpyaru-blue {
     border-right: solid 3pt #2096fc !important;
 }
-.ariborder_wpyaru-green {
+.arbitrator_wpyaru-green {
     border-right: solid 3pt #2fbe35 !important;
 }
-.ariborder_wpyaru-purple {
+.arbitrator_wpyaru-purple {
     border-right: solid 3pt #9f3fe5 !important;
 }
 /****************************************
@@ -961,6 +961,7 @@ span.remove_file_by_user {
     display:flex;
     align-items: center;
      position: relative;
+	 JUSTIFY-CONTENT: SPACE-BETWEEN;
 }
  
  

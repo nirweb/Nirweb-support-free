@@ -41,16 +41,16 @@ function filter_ajax_ticket_func()
         <li>
             <a href="?action=reply&id=<?php echo $row->ticket_id ?>" class="<?php
                     if (intval($row->status) == 1) {
-                        echo 'ariborder_wpyaru-red';
+                        echo 'arbitrator_wpyaru-red';
                     }
                     if (intval($row->status) == 2) {
-                        echo 'ariborder_wpyaru-blue';
+                        echo 'arbitrator_wpyaru-blue';
                     }
                     if (intval($row->status) == 3) {
-                        echo 'ariborder_wpyaru-purple';
+                        echo 'arbitrator_wpyaru-purple';
                     }
                     if (intval($row->status) == 4) {
-                        echo 'ariborder_wpyaru-green';
+                        echo 'arbitrator_wpyaru-green';
                     }
                                 ?>">
                 <div class="info_user_time_wpyaru">
@@ -101,16 +101,16 @@ function filter_ajax_ticket_func()
         <li>
             <a href="?action=reply&id=<?php echo $row->ticket_id ?>" class="<?php
                     if (intval($row->status) == 1) {
-                        echo 'ariborder_wpyaru-red';
+                        echo 'arbitrator_wpyaru-red';
                     }
                     if (intval($row->status) == 2) {
-                        echo 'ariborder_wpyaru-blue';
+                        echo 'arbitrator_wpyaru-blue';
                     }
                     if (intval($row->status) == 3) {
-                        echo 'ariborder_wpyaru-purple';
+                        echo 'arbitrator_wpyaru-purple';
                     }
                     if (intval($row->status) == 4) {
-                        echo 'ariborder_wpyaru-green';
+                        echo 'arbitrator_wpyaru-green';
                     }
                                 ?>">
                 <div class="info_user_time_wpyaru">

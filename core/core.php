@@ -424,7 +424,7 @@ if (wpyar_ticket['display_icon_send_ticket'] == '1') {
         if(is_plugin_active('wpyar_panel/wpyar_panel.php' )){
              $wpyarud = get_option('wpyarud_prefix_my_options');
               $page_name =$wpyarud['page_wpyarud_plugin'];  
-            $page =get_bloginfo('url' ).'/'.$page_name.'?page=nirweb-ticket';
+            $page =get_bloginfo('url').'/'.get_post_field( 'post_name', op_wpyar_panel['page_wpyarud_plugin']).'?endp=nirweb-ticket';
         }else{
             if( wpyar_ticket['select_page_ticket']){
                $page = esc_url( get_page_link( wpyar_ticket['select_page_ticket'] ) );
@@ -447,7 +447,7 @@ if (wpyar_ticket['display_icon_send_ticket'] == '1') {
             .nirweb_ticket_logo {
                 position: fixed;
                 bottom: 0;
-                z-index: 99999;
+                z-index: 9;
             }
         </style>
 <?php }, 100);

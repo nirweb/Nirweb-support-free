@@ -237,7 +237,7 @@ background-color:#9f3fe5;
 .ul_list_ticket_uwpyar li a::after {
     content: "";
     position: absolute;
-    right: -1px;
+    right: -2px;
     top: 50%;
     height: 34px;
     width: 17px;
@@ -296,6 +296,12 @@ background-color:#9f3fe5;
     color: #555;
     font-weight: 500;
 }
+.ul_list_ticket_uwpyar li a .info_user_time_wpyaru .icon_nameUser::after {
+     content: "-";
+     display: inline-block;
+     color: #ccc;
+     margin-left: 10px;
+}
 .ul_list_ticket_uwpyar li a .info_user_time_wpyaru .icon_nameUser svg {
     fill: gray;
     margin: 0 5px;
@@ -335,16 +341,16 @@ background-color:#9f3fe5;
     font-size: 13px;
     color: #b3b3b3;
 }
-.ariborder_wpyaru-red {
+.arbitrator_wpyaru-red {
     border-left: solid 3pt #ff0000 !important;
 }
-.ariborder_wpyaru-blue {
+.arbitrator_wpyaru-blue {
     border-right: solid 3pt #2096fc !important;
 }
-.ariborder_wpyaru-green {
+.arbitrator_wpyaru-green {
     border-right: solid 3pt #2fbe35 !important;
 }
-.ariborder_wpyaru-purple {
+.arbitrator_wpyaru-purple {
     border-right: solid 3pt #9f3fe5 !important;
 }
 /****************************************
@@ -519,6 +525,7 @@ background-color:#9f3fe5;
     margin-bottom: .625rem;
     padding-right: 8px;
     font-weight: 500;
+    display: block;
 }
 .row_nirweb_ticket_send input[type="text"],
 .row_nirweb_ticket_send select {
@@ -907,6 +914,7 @@ display:none;
         text-align: center;
         position: relative;
 }
+
 .top_box_back_rep{
     display:flex;
     justify-content: flex-end;

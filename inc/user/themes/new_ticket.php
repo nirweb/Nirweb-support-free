@@ -198,7 +198,7 @@ $faq = nirweb_ticket_get_all_faq_user();
 jQuery('body').on('click','#nirweb_ticket_frm_user_send_ticket',function(e){
 e.preventDefault();
 jQuery('.base_loarder').css('display','flex');
-    var subject = jQuery('#nirweb_ticket_frm_subject_send_ticket_user').val();
+    var subject = jQuery('#nirweb_ticket_frm_subject_send_ticket_user').val()
     var department = jQuery('#nirweb_ticket_frm_department_send_ticket_user').attr('data-id');
     var dep_name = jQuery('#nirweb_ticket_frm_department_send_ticket_user').text();
     var resived_id = jQuery('#nirweb_ticket_frm_department_send_ticket_user ').attr('data-user');
@@ -208,13 +208,13 @@ jQuery('.base_loarder').css('display','flex');
     var product = jQuery('#product_user_wpyar_tixket').attr('data-id');
     var formData = new FormData();
      formData.append('updoc', jQuery('input[type=file]')[0].files[0]);
-     formData.append('subject',subject);
-      formData.append('department',department);
-     formData.append('dep_name',dep_name);
-     formData.append('resived_id',resived_id);
-     formData.append('content',content);
-     formData.append('priority',priority);
-     formData.append('priority_name',priority_name);
+     formData.append('subject',subject),
+      formData.append('department',department),
+     formData.append('dep_name',dep_name),
+     formData.append('resived_id',resived_id),
+     formData.append('content',content),
+     formData.append('priority',priority),
+     formData.append('priority_name',priority_name),
      formData.append('product',product);
   var image_select = jQuery('#main_image').val();
     if (image_select) {
@@ -222,7 +222,7 @@ jQuery('.base_loarder').css('display','flex');
              var ac_size = <?php echo wpyar_ticket['size_of_file_wpyartik']; ?>000000;
              if(size_file >= ac_size){
                 jQuery('.base_loarder').css('display','none');
-                jQuery('.text_upload').css('display','none');
+                jQuery('.text_upload').css('display','none')
                 alert(wpyarticket.max_size_file);
                          return false  
              }
@@ -262,20 +262,20 @@ jQuery('.base_loarder').css('display','flex');
         alert( wpyarticket.nes_field);
         return false;
     }
-});
+})
 jQuery('body').on('click', '.bg_alert__nirweb', function (e) {
         jQuery(this).hide();
-    });
+    })
     jQuery('body').on('click', '.box_alert_nirweb .cancel', function (e) {
         jQuery('.bg_alert__nirweb').hide();
-    });
+    })
 
 
 jQuery('body').on('click', '.box_alert_nirweb', function (e) {
     e.preventDefault();
     e.stopPropagation();
 
-});
+})
 
 function alert_success(message) {
     jQuery('body').append(

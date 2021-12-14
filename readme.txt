@@ -2,9 +2,9 @@
 Contributors: nirweb
 Tags: support, Support Ticket, helpdesk, ticket system
 Requires at least: 5.0
-Tested up to: 5.8
+Tested up to: 5.8.1
 Requires PHP: 7.0
-Stable tag: 2.7.6
+Stable tag: 2.7.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -83,6 +83,15 @@ Yes, this plugin adds to the WooCommerce panel automatically and provides the op
 8. Email Settings 
 
 == Changelog ==
+
+= 2.7.9=
+* fixed: Coordination with NirWeb user panel plugin v4.2.2
+
+= 2.7.8=
+* fixed: some reported bugs
+
+= 2.7.7=
+* fixed: remove sweetalert 
 
 = 2.7.6=
 * added: Turkish translation
