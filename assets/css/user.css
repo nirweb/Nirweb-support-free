@@ -585,7 +585,8 @@ background-color:#9f3fe5;
     width: 100%;
     border-radius: 5px;
     border: solid 1px #b3b3b3;
-    overflow:hidden;
+    max-height: 250px;
+    overflow: auto;
     display:none;
     z-index: 999;
 }

@@ -26,8 +26,8 @@ a {
 }
 .edit_ticket_bg, .box_answer_war_wpyar_ticket,.row_wpyt{
     width: 100%;
- max-width: 1140px !important;
- margin: auto;
+    max-width: 1140px !important;
+    margin: auto;
 }
 .swal-modal {
     font-family: inherit !important;
@@ -40,10 +40,10 @@ a {
     margin-top: 0 !important;
 }
 .w-50 {
-   margin:0 2%;width:48%
+    margin:0 2%;width:48%
 }.w-100 {
-    width: 100%;
-}
+     width: 100%;
+ }
 .swal-button--confirm {
     background-color: #7cd1f9 !important;
     font-family: inherit !important;
@@ -53,7 +53,7 @@ a {
     font-family: inherit !important;
 }
 .nirweb_ticket_logo{
-position:fixed;bottom:0;z-index:99999; }
+    position:fixed;bottom:0;z-index:99999; }
 /************* ALERT ****************/
 .bg_alert__nirweb {
     position: fixed;
@@ -221,7 +221,7 @@ position:fixed;bottom:0;z-index:99999; }
     background-color: #2fbe35;
 }
 #answered:hover{
-background-color:#9f3fe5;
+    background-color:#9f3fe5;
 }
 #all:hover{
     background-color:#FEA000;
@@ -567,16 +567,16 @@ background-color:#9f3fe5;
     color: #b3b3b3;
 }
 .select_custom_wpyar div{
-        border: solid 1px #b3b3b3;
-        color: #b3b3b3;
-        border-radius: 4px;
-        width: 100%;
-        height: 38px;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        padding-right: 10px;
-        cursor: pointer;
+    border: solid 1px #b3b3b3;
+    color: #b3b3b3;
+    border-radius: 4px;
+    width: 100%;
+    height: 38px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding-right: 10px;
+    cursor: pointer;
 }
 .select_custom_wpyar i {
     position: absolute;
@@ -592,7 +592,7 @@ background-color:#9f3fe5;
 }
 .select_custom_wpyar i.top:before{
     content: "\f106";
-       -webkit-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
     -o-transition: all .3s ease-in-out;
     transition: all .3s ease-in-out;
 }
@@ -603,20 +603,21 @@ background-color:#9f3fe5;
     width: 100%;
     border-radius: 5px;
     border: solid 1px #b3b3b3;
-    overflow:hidden;
-    display:none;
+     display:none;
     z-index: 999;
+    max-height: 250px;
+    overflow: auto;
 }
- 
+
 .select_custom_wpyar ul li{
     list-style:none;
     padding:10px;
     font-size: 14px;
 }
 
- 
+
 .select_custom_wpyar ul li:hover{
-background:#f6f7f9;
+    background:#f6f7f9;
 }
 
 #nirweb_ticket_frm_content_send_ticket_user{
@@ -631,7 +632,7 @@ background:#f6f7f9;
 }
 #main_image{
     display:none
-} 
+}
 .attach_file_wpyar{
     cursor: pointer;
 }
@@ -661,7 +662,7 @@ background:#f6f7f9;
     background: rgba(255,255,255,0.74);
     width: 100%;
     height: 100%;
-     align-items: center;
+    align-items: center;
     justify-content: center;
 }
 .text_upload{
@@ -749,7 +750,7 @@ background:#f6f7f9;
     font-family: inherit !important;
 }
 .list_answerd_in_dash_admin{
-     font-family: inherit !important;   
+    font-family: inherit !important;
 }
 .text_message_wpyartick{
     font-size: 14px;
@@ -767,7 +768,7 @@ background:#f6f7f9;
     opacity: 1 !important;
 }
 .info_answer_box_wpyartick{
- width: 80%;
+    width: 80%;
 }
 .list_all_answered .head_answer,.ticket_question .head_answer{
     padding-right: 20px;
@@ -787,7 +788,7 @@ background:#f6f7f9;
     top: 4px;
     margin-left: 10px;
 }
- 
+
 .file_atach_url{
     border-top:dashed 1px #b3b3b3;
     padding-top: 10px;
@@ -809,44 +810,44 @@ background:#f6f7f9;
     align-self: center;
 }
 .info_wpyar_ticket{
-    
-display: flex;
-    
-justify-content: space-between;
-    
-background: #e8e8e8;
-    
-padding: 10px;
-    
-border-radius: 8px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    background: #e8e8e8;
+
+    padding: 10px;
+
+    border-radius: 8px;
 }
 .box_info_ticket{
-    
-width: 24%;
-    
-text-align: center;
-    
-color: #000;
+
+    width: 24%;
+
+    text-align: center;
+
+    color: #000;
 }
 .box_info_ticket .title{
-    
-margin-bottom: 3px;
-    
-font-size: 14px;
-    
-font-weight: 500;
+
+    margin-bottom: 3px;
+
+    font-size: 14px;
+
+    font-weight: 500;
 }
 .box_info_ticket .info{
-    
-margin-bottom: 0;
-    
-background: #fff;
-    
-border-radius: 5px;
-    
-padding: 5px;
-    
-font-size: 14px;
+
+    margin-bottom: 0;
+
+    background: #fff;
+
+    border-radius: 5px;
+
+    padding: 5px;
+
+    font-size: 14px;
 }
 
 button.send_user_answer {
@@ -865,11 +866,11 @@ button.send_user_answer {
     font-weight: 400;
 }
 label[for="closed_answer"] {
- margin-bottom:0;
- margin-left: 10px;
+    margin-bottom:0;
+    margin-left: 10px;
 }
 .box_answer_war_wpyar_ticket{
-        margin-top: 25px;
+    margin-top: 25px;
     padding: 20px;
     box-shadow: 0 0 3px #ccc;
     border-radius: 5px;
@@ -881,11 +882,11 @@ label[for="closed_answer"] {
 }
 
 .list_all_answered li .head_answer .date{
- margin: 0  8px;
+    margin: 0  8px;
 }
 
 .list_all_answered li.user_support_wpyar .text_message_wpyartick{
-font-size: 14px;
+    font-size: 14px;
     padding: 15px;
     background: #353535;
     color: #fff;
@@ -898,16 +899,16 @@ font-size: 14px;
 
 .list_all_answered li.user_support_wpyar .head_answer{
     flex-direction: row-reverse;
-        padding-left: 20px;
+    padding-left: 20px;
 }
 
 
 .list_all_answered li.user_support_wpyar .head_answer .name::after{
-display:none;
+    display:none;
 }
 
 .list_all_answered li.user_support_wpyar .head_answer .name::before{
-   content: "";
+    content: "";
     display: inline-block;
     width: 2px;
     height: 15px;
@@ -917,19 +918,19 @@ display:none;
     margin-right: 10px;
     margin-left: 0;
     right: 0;
-    
-    
+
+
 }
 .label_main_image{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        padding: 35px !important;
-        border: dashed 1.5pt #696969;
-        cursor: pointer;
-        text-align: center;
-        position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 35px !important;
+    border: dashed 1.5pt #696969;
+    cursor: pointer;
+    text-align: center;
+    position: relative;
 }
 .top_box_back_rep{
     display:flex;justify-content: flex-end;
@@ -960,11 +961,11 @@ span.remove_file_by_user {
 .box_btn_send_answer_user{
     display:flex;
     align-items: center;
-     position: relative;
-	 JUSTIFY-CONTENT: SPACE-BETWEEN;
+    position: relative;
+    JUSTIFY-CONTENT: SPACE-BETWEEN;
 }
- 
- 
+
+
 /*************************************************************
 #---------------------- Ajax Request Loarder ----------------------#
 **************************************************************/
@@ -980,7 +981,7 @@ span.remove_file_by_user {
     text-align: center;
     margin: auto;
 }
- .spinner {
+.spinner {
     width: 40px;
     height: 40px;
     margin: 0 auto;
@@ -991,37 +992,37 @@ span.remove_file_by_user {
 }
 
 .double-bounce1, .double-bounce2 {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  background-color: #333;
-  opacity: 0.6;
-  position: absolute;
-  top: 0;
-  left: 0;
-  
-  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
-  animation: sk-bounce 2.0s infinite ease-in-out;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #333;
+    opacity: 0.6;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+    animation: sk-bounce 2.0s infinite ease-in-out;
 }
 
 .double-bounce2 {
-  -webkit-animation-delay: -1.0s;
-  animation-delay: -1.0s;
+    -webkit-animation-delay: -1.0s;
+    animation-delay: -1.0s;
 }
 
 @-webkit-keyframes sk-bounce {
-  0%, 100% { -webkit-transform: scale(0.0) }
-  50% { -webkit-transform: scale(1.0) }
+    0%, 100% { -webkit-transform: scale(0.0) }
+    50% { -webkit-transform: scale(1.0) }
 }
 
 @keyframes sk-bounce {
-  0%, 100% { 
-    transform: scale(0.0);
-    -webkit-transform: scale(0.0);
-  } 50% { 
-    transform: scale(1.0);
-    -webkit-transform: scale(1.0);
-  }
+    0%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    } 50% {
+          transform: scale(1.0);
+          -webkit-transform: scale(1.0);
+      }
 }
 .base_loarder p{
     color:#fff !important;
@@ -1068,12 +1069,12 @@ span.remove_file_by_user {
         align-self: center;
     }
     .row_nirweb_ticket_send {
-       flex-direction: column;
+        flex-direction: column;
     }
     .w-50{
         width:100% !important;
         margin-bottom: 15px;
-     }
+    }
 }
 
 
@@ -1103,9 +1104,9 @@ span.remove_file_by_user {
 
 
 @media screen and (max-width:540px){
-      .col_box_status_ticket_wpyar { width: 100%;margin-left:0; padding:10px;}
+    .col_box_status_ticket_wpyar { width: 100%;margin-left:0; padding:10px;}
 
-     .ul_list_ticket_uwpyar li a .info_user_time_wpyaru .icon_nameUser {
+    .ul_list_ticket_uwpyar li a .info_user_time_wpyaru .icon_nameUser {
         font-size: 13px;
         height: 100%;
         margin: 0 17px;
@@ -1114,13 +1115,13 @@ span.remove_file_by_user {
         font-weight: 500;
     }
     .ul_list_ticket_uwpyar li a .info_user_time_wpyaru,.ul_list_ticket_uwpyar li .title_time_ticket{
-        flex-direction: column;   
+        flex-direction: column;
     }
 }
 
 @media screen and (max-width:380px){
-.row_status {flex-direction: column;justify-content: center;align-items: center;}
-.head_wpyar_tickt {margin-top: 15px;flex-direction: column;}
-.col_box_status_ticket_wpyar p {margin-bottom: 0;}
-.col_box_status_ticket_wpyar svg {margin-bottom: 0;}
+    .row_status {flex-direction: column;justify-content: center;align-items: center;}
+    .head_wpyar_tickt {margin-top: 15px;flex-direction: column;}
+    .col_box_status_ticket_wpyar p {margin-bottom: 0;}
+    .col_box_status_ticket_wpyar svg {margin-bottom: 0;}
 }
