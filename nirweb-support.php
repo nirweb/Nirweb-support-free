@@ -3,7 +3,7 @@
 Plugin Name: nirweb support
 Description: NirWeb support is a great help desk and support plugin for WordPress with full support of WooCommerce
 Author: nirweb Team
-Version: 2.7.9
+Version: 2.8.0
 Author URI:  https://www.nirweb.ir
 Text Domain: nirweb-support
 Domain Path: /languages

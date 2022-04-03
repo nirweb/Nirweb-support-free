@@ -1,6 +1,6 @@
 <?php
 $ticket_id = sanitize_text_field($_POST['id_form']);
-if (!function_exists('nirweb_ticket_answer_ticket')) {
+if (!function_exists('nirweb_ticket_answer_ticket') && is_admin(  )) {
   function nirweb_ticket_answer_ticket($ticket_id){
     $text = preg_replace('/\\\\/', '', wpautop($_POST['content']));
        global $wpdb;
@@ -53,10 +53,11 @@ if (!function_exists('nirweb_ticket_answer_ticket')) {
 
 if (!function_exists('func_list_answer_ajax')) {
   function func_list_answer_ajax($ticket_id){
+    $t_id = sanitize_text_field($ticket_id);
     global $wpdb;
     $process_answer_list = $wpdb->get_results("SELECT answered.* ,users.ID , users.display_name
     FROM {$wpdb->prefix}nirweb_ticket_ticket_answered answered   JOIN {$wpdb->prefix}users users ON user_id=ID
-    WHERE ticket_id=$ticket_id  ORDER BY answer_id ASC ");
+    WHERE ticket_id=$t_id  ORDER BY answer_id ASC ");
 
     foreach($process_answer_list as $row):
         echo'<li> <div class="head_answer"> <span class="name">'.$row->display_name.'  </span>

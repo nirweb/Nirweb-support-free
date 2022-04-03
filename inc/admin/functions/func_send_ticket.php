@@ -1,5 +1,5 @@
 <?php
-if (!function_exists('nirweb_ticket_send_ticket')) {
+if (!function_exists('nirweb_ticket_send_ticket') && is_admin(  )) {
     function nirweb_ticket_send_ticket(){   
         $text = preg_replace('/\\\\/', '', sanitize_textarea_field(wpautop($_POST['send_content'])));
            global $wpdb;
@@ -20,8 +20,7 @@ if (!function_exists('nirweb_ticket_send_ticket')) {
                 'date_qustion'   =>  current_time("Y-m-d H:i:s")
             );
             $wpdb->insert($wpdb->prefix.'nirweb_ticket_ticket',$frm_ary_elements);
-                if(sanitize_text_field($_POST['check_mail'])=='true'){
-                   
+                if(sanitize_text_field($_POST['check_mail'])=='true'){  
                  $lastid = $wpdb->insert_id; 
                  $recever_name = sanitize_text_field($_POST['receiver_name']);
                  $current_user = wp_get_current_user();
@@ -33,11 +32,9 @@ if (!function_exists('nirweb_ticket_send_ticket')) {
                  $fromName =  $user_sender;
                  $subject = sanitize_text_field($_POST['subject']);    
                  $time = current_time( 'd/m/Y - H:i:s' , time());
-                 
-                  $htmlContent = wpautop(str_replace('{username}',$recever_name,get_option('nirweb_ticket_perfix')['template_send_ticket_email']));  
+                 $htmlContent = wpautop(str_replace('{username}',$recever_name,get_option('nirweb_ticket_perfix')['template_send_ticket_email']));  
                  $headers = array('Content-Type: text/html; charset=UTF-8');
                  $body = $htmlContent;
-                    
                 $rres =  wp_mail( $to, $subject, $body, $headers );
             }
     

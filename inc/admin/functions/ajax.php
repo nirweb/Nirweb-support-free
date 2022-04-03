@@ -94,7 +94,7 @@ if (!function_exists('send_new_ticket')) {
  */
 add_action('wp_ajax_answerd_ticket', 'answerd_ticket');
 add_action('wp_ajax_nopriv_answerd_ticket', 'answerd_ticket');
-if (!function_exists('answerd_ticket')) {
+if (!function_exists('answerd_ticket') && is_admin( )) {
     function answerd_ticket()
         {
             include_once NIRWEB_SUPPORT_INC_ADMIN_FUNCTIONS_TICKET.'func_answerd_ticket.php';
