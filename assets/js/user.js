@@ -70,30 +70,6 @@ jQuery(document).ready(function () {
     })
 
 
- //---------------- Search In Table Ticket
-       jQuery("#user_search_in_ticket_wpyar").on("keyup", function() {
-        var value = jQuery(this).val();
-                if(value){
-                jQuery.ajax({
-                    url: wpyarticket.ajax_url,
-                    type: "post",
-                    data: {
-                        value: value,
-                        action: "nirweb_ticket_user_search",
-                                },
-                    success: function (response) {
-                       jQuery('.search_war_wpyar_ticket ul').slideDown(150).html(response)
-                        return false;
-                    },
-            
-                })
-            }else{
-                jQuery('.search_war_wpyar_ticket ul').hide()      
-            }
-        });
-
- 
-
  
 
 //------------- Remove Upload By user
@@ -200,6 +176,7 @@ jQuery('.wpyar_upfile_base').html(`<div class="upfile_wpyartick">
         data: {
             status,
             action: "filtter_ticket_status",
+            once:jQuery('#nirweb_ticket_filtter_ticket_status').val()
                     },
         success: function (response) {
            jQuery('.ajax_result').html(response)

@@ -29,6 +29,18 @@ function delete_alert_nirweb(form) {
 
 
 }
+
+//------------ Delay For Search Ajax ---------
+function delay_nirweb_ticket(callback, ms) {
+    var timer = 0;
+    return function () {
+        var context = this, args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            callback.apply(context, args);
+        }, ms || 0);
+    };
+}
 //-------------------------- Editor Wordpress ---------------------------//
    function tmce_getContent(editor_id, textarea_id) {
     if ( typeof editor_id == 'undefined' ) editor_id = wpActiveEditor;
@@ -74,16 +86,17 @@ function delete_alert_nirweb(form) {
  
 
 //---------------- Search In Table Ticket ---------------------//
-jQuery("#serch_support_wpy").on("keyup", function() {
+jQuery("#serch_support_wpy").on("keyup", delay_nirweb_ticket(function () {
     var value = jQuery(this).val();
+    let once = jQuery("#nirweb_ticket_ajax_search").val()
+
          if(value){
              jQuery('.ajax_search_loading_ticket').show();
-             
             jQuery.ajax({
                 url: wpyarticket.ajax_url,
                 type: "post",
                 data: {
-                    value: value,
+                    value,once,
                     action: "ajax_search_in_ticketes_wpyar",
                         },
                 success: function (response) {
@@ -96,7 +109,7 @@ jQuery("#serch_support_wpy").on("keyup", function() {
               jQuery('.ajax_search_loading_ticket').hide();
             jQuery('.ajax_search ul').hide()      
         }
-});
+},500) );
 //---------------- Select type user
     jQuery('.nirweb_ticket_frm__receiver').click(function () {
         jQuery('.nirweb_ticket_frm_list_type_receiver').slideDown(200);
@@ -110,12 +123,13 @@ jQuery("#serch_support_wpy").on("keyup", function() {
         jQuery('.nirweb_ticket_frm_type_receiver select').change(function () {
         jQuery('.nirweb_ticket_frm_final_items_receiver select').html('<option>'+wpyarticket.send_info+'</option>');
         var selectedtypsender = jQuery(this).children("option:selected").val();
+        let once = jQuery("#admin_send_ticket").val();
            jQuery.ajax({
                 url: wpyarticket.ajax_url,
                 type: "post",
                 data: {
                 action: "send_type_role_user",
-                selectedtypsender
+                selectedtypsender,once
                 },
                 success: function (response) {
                  jQuery('.nirweb_ticket_frm_final_items_receiver select').html(response);
@@ -177,7 +191,12 @@ jQuery('.btn_send_ticket').click(function (e) {
             let website=jQuery('#nirweb_ticket_frm_website_send_ticket').val();
             let product=jQuery('#nirweb_ticket_frm_product_send_ticket option:selected').val();
             let status=jQuery('#nirweb_ticket_frm_status_send_ticket option:selected').val();
+            let once = jQuery('#admin_send_ticket_nirweb').val();
             let file_url=jQuery('#true_pre_image').attr('src');
+            
+            
+ 
+            
             if (receiver && tyreceiver !=0 && subj &&send_content ){
                 if (jQuery('#chk_email').is(':checked')) {
                    check_mail = true;
@@ -200,7 +219,7 @@ jQuery('.btn_send_ticket').click(function (e) {
                     receiver_name:receiver_name,
                     receiver_mail:receiver_mail,
                     department,
-                    priority,
+                    priority,once
                 },
                 success: function (response) {
                     jQuery('#send_form_ticket').trigger('reset');
@@ -249,7 +268,8 @@ jQuery("body").on("click", ".btn_send_answered", function (e) {
                    sender_id : jQuery('.sender').attr('user-id'),
                    resivered_id : jQuery('.resivered').attr('data-id'),
                    subject : jQuery('.subject').text(),
-                   
+                   once : jQuery('#admin_answer_nirweb_ticker').val(),
+
                    action : "answerd_ticket",
                     },
             success: function (response) {
@@ -284,7 +304,8 @@ jQuery("body").on("click", "#frm_btn_delete", function (t) {
                 type: "post",
                  data: {
                     check: checkeds,
-                    action: "delete_tickets_admin"
+                    action: "delete_tickets_admin",
+                     once:jQuery('#delete_ticket_admin').val()
                 },
                 success: function (response) {
                   location.reload()
@@ -296,7 +317,8 @@ jQuery("body").on("click", "#frm_btn_delete", function (t) {
     })
 //---------------- Add Department  ----------------//
 jQuery("body").on("click", "#submit_new_department", function (e) { 
-    var department_name =  jQuery('#nirweb_ticket_name_department').val()
+    var department_name =  jQuery('#nirweb_ticket_name_department').val();
+    var once = jQuery('#add_department_wpyt_once').val();
     if(!department_name){
         alert(wpyarticket.name_dep_err);
         return false
@@ -312,7 +334,8 @@ jQuery("body").on("click", "#submit_new_department", function (e) {
          data: {
             department_name: department_name,
             id_poshtiban: id_poshtiban,
-            action: "add_department_wpyt"
+            action: "add_department_wpyt",
+             once
         },
         success: function (response) {
             window.location.reload();       
@@ -337,7 +360,8 @@ jQuery("body").on("click", "#frm_btn_delete_dep", function (t) {
                 type: "post",
                  data: {
                     check: checkeds,
-                    action: "delete_department"
+                    action: "delete_department",
+                     once:jQuery('#del_department_wpyt_once').val()
                 },
                 success: function (response) {
                     location.reload()
@@ -363,6 +387,7 @@ jQuery("body").on("click", ".edit_dep_wpys", function (t) {
      jQuery('#submit_new_department').remove();
      jQuery('form').append('<button id="update_department" class="sueccess">'+wpyarticket.ok+'</button>')
      jQuery('form').append('<button id="cancel_department" class="warning">'+wpyarticket.cancel+'</button>')
+     jQuery('form').append(" <?php wp_nonce_field( 'edit_department_wpyt_once_act', 'edit_department_wpyt_once' ); ?>")
      jQuery('form').append('<input type="hidden" id="id_row" value="'+dep_id+'">');
      t.preventDefault();
 })
@@ -392,7 +417,8 @@ jQuery("body").on("click", "#update_department", function (t) {
             department_name: department_name,
             id_poshtiban: id_poshtiban,
             depa_id: depa_id,
-            action: "edite_department"
+            action: "edite_department",
+             once:jQuery('#add_department_wpyt_once').val()
         },
         success: function (response) {
             swal(wpyarticket.chenge_dep , "", "success");
@@ -430,7 +456,8 @@ jQuery("body").on("click", "#submit_new_faq", function (t) {
          data: {
             text_question_faq: text_question_faq,
             content_question_faq: content_question_faq,
-             action: "add_question_faq"
+             action: "add_question_faq",
+             once:jQuery('#add_question_faq_once').val()
         },
         success: function (response) {
             window.location.reload(); 
@@ -449,7 +476,8 @@ jQuery("body").on("click", ".remove_faq", function (e) {
                 type: "post",
                  data: {
                    col_id,
-                    action: "delete_faq"
+                    action: "delete_faq",
+                     once:jQuery('#del_question_faq_once').val()
                 },
                 success: function (response) {
                     location.reload()
@@ -464,6 +492,7 @@ jQuery("body").on("click", ".remove_faq", function (e) {
 
 
 jQuery("body").on("click", "#frm_btn_delete_files_users", function (t) {
+      once = jQuery('#admin_del_files').val();
     swal({
         title: wpyarticket.ques,
         text: wpyarticket.subdel,
@@ -473,31 +502,41 @@ jQuery("body").on("click", "#frm_btn_delete_files_users", function (t) {
       })
       .then((willDelete) => {
         if (willDelete) {
-      
+              
             var checkeds = new Array();
             var checkeds_id_file = new Array();
             jQuery('input[name="frm_check_items[]"]:checked').each(function(i) {
                 checkeds.push(jQuery(this).val());
                 checkeds_id_file.push(jQuery(this).attr('data-file'));
             });
-            
+              
            jQuery.ajax({
                 url: wpyarticket.ajax_url,
-                type: "post",
-                type_data:'',
+                type: "POST",
                  data: {
+                      once: once,
                     check: checkeds,
                     checkeds_id_file: checkeds_id_file,
-                    action: "ticket_wpyar_file_user_delete"
+                    action: "ticket_wpyar_file_user_delete",
+                   
                 },
                 success: function (response) {
- 
-                    location.reload()
+                     location.reload()
                 },
             })
         }  
       });
         t.preventDefault()
     })
+
+ //-------------- Setting -----
+    jQuery('.list_tabs_settings li').on('click',function (){
+        jQuery('.list_tabs_settings li').removeClass('active');
+        jQuery(this).addClass('active');
+        jQuery('.content_settings >div').hide();
+        jQuery('#'+ jQuery(this).attr('data-target')).show();
+    });
+
+
 
 })//-------------- end document ready
